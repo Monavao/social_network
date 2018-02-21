@@ -1,6 +1,10 @@
-#front_homepage:
-#    path:     /
-#    defaults: { _controller: FrontBundle:Static:homepage }
+front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Static:homepage }
+
+front_about:
+    path:     /about
+    defaults: { _controller: FrontBundle:Static:about }
 
 #front_homepage:
 #    path:     /some/{name}
@@ -10,6 +14,6 @@
 #    path:     /hello/{name}
 #    defaults: { _controller: FrontBundle:Demo:hello, name: "HELLO" }
 
-front_homepage:
-    path:     /article
-    defaults: { _controller: FrontBundle:Test:add }
+#front_homepage:
+#    path:     /article
+#    defaults: { _controller: FrontBundle:Test:add }

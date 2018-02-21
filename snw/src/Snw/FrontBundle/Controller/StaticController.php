@@ -10,6 +10,14 @@ class StaticController extends Controller
 {
 	public function homepageAction()
 	{
-		return new Response("Hello World !!!");
+		$name = 'World';
+		return $this->render('FrontBundle:Static:homepage.html.twig',
+			array('name' => $name)
+		);
+	}
+
+	public function aboutAction()
+	{
+		return $this->render('FrontBundle:Static:about.html.twig');
 	}
 }
