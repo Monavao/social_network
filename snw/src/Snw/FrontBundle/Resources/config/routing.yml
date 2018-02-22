@@ -6,6 +6,10 @@ front_about:
     path:     /about
     defaults: { _controller: FrontBundle:Static:about }
 
+front_timeline:
+    path:     /timeline
+    defaults: { _controller: FrontBundle:Timeline:timeline }
+
 #front_homepage:
 #    path:     /some/{name}
 #    defaults: { _controller: FrontBundle:Some:index }

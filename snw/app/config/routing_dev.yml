@@ -10,5 +10,8 @@ _errors:
     resource: '@TwigBundle/Resources/config/routing/errors.xml'
     prefix: /_error
 
+snw_dev:
+    resource: "@FrontBundle/Resources/config/routing.yml"
+
 _main:
     resource: routing.yml
