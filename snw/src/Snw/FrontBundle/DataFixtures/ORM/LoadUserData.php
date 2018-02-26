@@ -17,7 +17,7 @@ class LoadUserData extends AbstractFixture implements OrderedFixtureInterface
 	{
 		$faker = \Faker\Factory::create();
 
-		for($i=0; $i<self::MAX_NB_USERS; $i++)
+		for($i = 0; $i < self::MAX_NB_USERS; $i++)
 		{
 			$user = new User();
 			$user->setUsername($faker->username);

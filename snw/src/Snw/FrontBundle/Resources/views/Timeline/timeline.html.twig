@@ -16,7 +16,7 @@
 		<tbody>
 			{% for status in statues %}
 				<tr>
-					<td>{{ status.user.username }}</td>
+					<td><a href="{{ path('front_user_timeline', { userId : status.user.id }) }}">{{ status.user.username }}</a></td>
 					<td>{{ status.content }}</td>
 					<td>{{ status.deleted ? "supprimé" : "visible" }}</td>
 					<td>{% if status.createdAt %}

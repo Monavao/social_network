@@ -10,6 +10,10 @@ front_timeline:
     path:     /timeline
     defaults: { _controller: FrontBundle:Timeline:timeline }
 
+front_user_timeline:
+    path:     /timeline/{userId}
+    defaults: { _controller: FrontBundle:Timeline:userTimeline }
+
 #front_homepage:
 #    path:     /some/{name}
 #    defaults: { _controller: FrontBundle:Some:index }

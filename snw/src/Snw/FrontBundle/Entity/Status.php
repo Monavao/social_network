@@ -58,6 +58,11 @@ class Status
     protected $user;
 
     /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="status")
+     */
+    protected $comments;
+
+    /**
      * Get id
      *
      * @return int
@@ -202,5 +207,44 @@ class Status
     public function getUser()
     {
         return $this->user;
+    }
+
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add comment
+     *
+     * @param \Snw\FrontBundle\Entity\Comment $comment
+     *
+     * @return Status
+     */
+    public function addComment(\Snw\FrontBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \Snw\FrontBundle\Entity\Comment $comment
+     */
+    public function removeComment(\Snw\FrontBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }
