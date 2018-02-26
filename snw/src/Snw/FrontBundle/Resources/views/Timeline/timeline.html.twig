@@ -7,6 +7,7 @@
 	<table class="statuses_list">
 		<thead>
 			<tr>
+				<th>User</th>
 				<th>Content</th>
 				<th>Deleted</th>
 				<th>Createdat</th>
@@ -15,6 +16,7 @@
 		<tbody>
 			{% for status in statues %}
 				<tr>
+					<td>{{ status.user.username }}</td>
 					<td>{{ status.content }}</td>
 					<td>{{ status.deleted ? "supprimé" : "visible" }}</td>
 					<td>{% if status.createdAt %}

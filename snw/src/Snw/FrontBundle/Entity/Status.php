@@ -3,6 +3,7 @@
 namespace Snw\FrontBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Snw\FrontBundle\Entity\User;
 
 /**
  * Status
@@ -49,6 +50,12 @@ class Status
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="statuses")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    protected $user;
 
     /**
      * Get id
@@ -171,5 +178,29 @@ class Status
     public function preUpdateEvent()
     {
         $this->updatedAt = new \Datetime();
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Snw\FrontBundle\Entity\User $user
+     *
+     * @return Status
+     */
+    public function setUser(\Snw\FrontBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Snw\FrontBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
