@@ -14,6 +14,10 @@ front_user_timeline:
     path:     /timeline/{userId}
     defaults: { _controller: FrontBundle:Timeline:userTimeline }
 
+front_friends_timeline:
+    path:     /friends_timeline/{userId}
+    defaults: { _controller: FrontBundle:Timeline:friendsTimeline }
+
 #front_homepage:
 #    path:     /some/{name}
 #    defaults: { _controller: FrontBundle:Some:index }
