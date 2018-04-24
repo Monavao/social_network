@@ -1,2 +1,2 @@
 # social_network
-A Symfony project
+A project in symfony 2.8
